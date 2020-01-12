@@ -13,7 +13,7 @@ const SPECIAL = {
 
 const cashbackLimit = 3000;
 
-const Purchases = [
+const purchases = [
     {
         sum: 4662,
         category: REGULAR
@@ -33,7 +33,7 @@ const Purchases = [
 ];
 
 let cashback = 0;
-Purchases.forEach(purchase => {
+purchases.forEach(purchase => {
     cashback += purchase.sum * purchase.category.percent;
 });
 if (cashback > cashbackLimit) {
