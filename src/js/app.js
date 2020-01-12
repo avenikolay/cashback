@@ -1,19 +1,43 @@
-const regularPurchases = 100;
-const regularPurchasesPercent = 0.01;
-
-const increasedPurchases = 100;
-const increasedPurchasesPercent = 0.05;
-
-const specialPurchases = 100;
-const specialPurchasesPercent = 0.3;
-
-let cashback = regularPurchases * regularPurchasesPercent +
-    increasedPurchases * increasedPurchasesPercent +
-    specialPurchases * specialPurchasesPercent;
+const REGULAR = {
+    name: 'regular',
+    percent: 0.01
+};
+const INCREASED = {
+    name: 'increased',
+    percent: 0.05
+};
+const SPECIAL = {
+    name: 'increased',
+    percent: 0.3
+};
 
 const cashbackLimit = 3000;
+
+const Purchases = [
+    {
+        sum: 4662,
+        category: REGULAR
+    },
+    {
+        sum: 780,
+        category: INCREASED
+    },
+    {
+        sum: 4760,
+        category: SPECIAL
+    },
+    {
+        sum: 234,
+        category: SPECIAL
+    }
+];
+
+let cashback = 0;
+Purchases.forEach(purchase => {
+    cashback += purchase.sum * purchase.category.percent;
+});
 if (cashback > cashbackLimit) {
     cashback = cashbackLimit;
 }
 
-console.log(cashback);
+console.log(`Размер кэшбека: ${cashback}`);
