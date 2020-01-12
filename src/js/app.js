@@ -11,6 +11,7 @@ const SPECIAL = {
     percent: 0.3
 };
 
+
 const cashbackLimit = 3000;
 
 const purchases = [
